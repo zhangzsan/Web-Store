@@ -8,4 +8,4 @@ Database
 1. Client DB (ClientID, Name, Surename, e-mail, password)
 2. Product DB (ProductID, Name, Category, Price)
 3. Order DB (OrderID, ClientID, ProductpackID, Date, Price)
-4. Productpack DB (Quantity, ProductID, Price)
+4. Productpack DB (ProductpackID, Quantity, ProductID, Price)
