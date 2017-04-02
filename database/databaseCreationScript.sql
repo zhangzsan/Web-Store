@@ -8,14 +8,23 @@ USE `java2` ;
 -- -----------------------------------------------------
 -- Table `Java2_test`.`users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `users` ;
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `UserID` INT(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `ClientDB` (
+  `ClientID` INT(11) NOT NULL AUTO_INCREMENT,
   `FirstName` CHAR(32) NOT NULL,
   `LastName` CHAR(32) NOT NULL,
-  PRIMARY KEY (`UserID`)
+  `Mail` CHAR(32) NOT NULL,
+  `Password` CHAR(32) NOT NULL,
+  PRIMARY KEY (`ClientID`)
 )
+CREATE TABLE IF NOT EXISTS `OrderDB` (
+  `OrderID` INT(11) NOT NULL AUTO_INCREMENT,
+  `ProdpackID`INT(11) NOT NULL,
+  `Ordmoment` DATE,
+  `Payment` INT(11) NOT NULL,
+   PRIMARY KEY (`OrderID`)
+  FOREIGN KEY (`ClientID`) REFERENCES Client DB (`ClientID`);
+  )
 ENGINE = InnoDB
 AUTO_INCREMENT = 1002;
 
