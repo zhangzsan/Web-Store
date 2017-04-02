@@ -25,6 +25,24 @@ CREATE TABLE IF NOT EXISTS `OrderDB` (
    PRIMARY KEY (`OrderID`)
   FOREIGN KEY (`ClientID`) REFERENCES Client DB (`ClientID`);
   )
+
+  CREATE TABLE IF NOT EXISTS `ProductDB` (
+  `ProductID` INT(11) NOT NULL AUTO_INCREMENT,
+  `Name` CHAR(32) NOT NULL,
+  `Category` CHAR(32) NOT NULL,
+  `Price` INT(11) NOT NULL,
+  PRIMARY KEY (`ProductID`)
+)
+
+CREATE TABLE IF NOT EXISTS `ProductPackDB` (
+  `ProuctpackID` INT(11) NOT NULL AUTO_INCREMENT,
+  `Quantity`INT(11) NOT NULL,
+  `ProductID` INT(11) NOT NULL,
+  `Price` INT(11) NOT NULL,
+   PRIMARY KEY (`ProductpackID`)
+  FOREIGN KEY (`ProductID`) REFERENCES ProductDB (`ProductIDID`);
+  )
+
 ENGINE = InnoDB
 AUTO_INCREMENT = 1002;
 
