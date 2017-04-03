@@ -1,8 +1,10 @@
 package lv.javaguru.java2.services;
 
-public interface UserValidator {
+import lv.javaguru.java2.domain.User;
 
-    void validate(String firstName,
+public interface UserRegistrationService {
+
+    User register(String firstName,
                   String lastName,
                   String mail,
                   String password);

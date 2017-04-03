@@ -16,16 +16,15 @@ public class UserValidatorImplTest {
     public void shouldThrowExceptionWhenFirstNameIsNull() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("First Name must be not empty!");
-        validator.validate(null, "password");
+        validator.validate(null, "password", "mail", "password");
     }
 
     @Test
     public void shouldThrowExceptionWhenFirstNameIsEmpty() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("First Name must be not empty!");
-        validator.validate("", "password");
+        validator.validate("", "password", "mail", "password");
     }
-
 
     // write more tests
 

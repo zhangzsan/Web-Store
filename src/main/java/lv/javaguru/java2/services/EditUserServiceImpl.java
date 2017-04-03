@@ -6,7 +6,7 @@ import lv.javaguru.java2.domain.User;
 
 import java.util.Optional;
 
-public class UserServiceImpl implements UserService {
+public class EditUserServiceImpl implements EditUserService {
 
     private UserDAO userDAO = new UserDAOImpl();
     private UserValidator userValidator = new UserValidatorImpl();
@@ -14,13 +14,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void edit(Long userId,
                      String newFirstName,
-                     String newLastName) {
+                     String newLastName,
+                     String newMail,
+                     String newPassword) {
         Optional<User> userOpt = userDAO.getById(userId);
         if (!userOpt.isPresent()) {
             throw new IllegalArgumentException("User not found by id = " + userId);
         }
 
-        userValidator.validate(newFirstName, newLastName);
+        userValidator.validate(newFirstName, newLastName, newMail, newPassword);
 
         User user = userOpt.get();
         user.setFirstName(newFirstName);

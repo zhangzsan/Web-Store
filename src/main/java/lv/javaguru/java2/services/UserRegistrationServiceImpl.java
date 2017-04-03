@@ -6,19 +6,24 @@ import lv.javaguru.java2.domain.User;
 
 import static lv.javaguru.java2.domain.UserBuilder.createUser;
 
-public class UserFactoryImpl implements UserFactory {
+public class UserRegistrationServiceImpl implements UserRegistrationService {
 
     private UserValidator userValidator = new UserValidatorImpl();
     private UserDAO userDAO = new UserDAOImpl();
 
 
     @Override
-    public User create(String firstName, String lastName) {
-        userValidator.validate(firstName, lastName);
+    public User register(String firstName,
+                         String lastName,
+                         String mail,
+                         String password) {
+        userValidator.validate(firstName, lastName, mail, password);
 
         User user = createUser()
                 .withFirstName(firstName)
-                .withLastName(lastName).build();
+                .withLastName(lastName)
+                .withMail(mail)
+                .withPassword(password).build();
 
         return userDAO.save(user);
     }

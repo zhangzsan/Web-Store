@@ -3,9 +3,14 @@ package lv.javaguru.java2.services;
 public class UserValidatorImpl implements UserValidator {
 
     @Override
-    public void validate(String firstName, String lastName) {
+    public void validate(String firstName,
+                         String lastName,
+                         String mail,
+                         String password) {
         validateFirstName(firstName);
         validateLastName(lastName);
+        validateMail(mail);
+        validatePassword(password);
     }
 
     private void validateFirstName(String firstName) {
@@ -17,6 +22,18 @@ public class UserValidatorImpl implements UserValidator {
     private void validateLastName(String lastName) {
         if (lastName == null || lastName.isEmpty()) {
             throw new IllegalArgumentException("Last Name must be not empty!");
+        }
+    }
+
+    private void validateMail(String mail) {
+        if (mail == null || mail.isEmpty()) {
+            throw new IllegalArgumentException("Mail must be not empty!");
+        }
+    }
+
+    private void validatePassword(String password) {
+        if (password == null || password.isEmpty()) {
+            throw new IllegalArgumentException("Password must be not empty!");
         }
     }
 
