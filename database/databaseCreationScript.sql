@@ -35,12 +35,12 @@ CREATE TABLE IF NOT EXISTS `OrderDB` (
 )
 
 CREATE TABLE IF NOT EXISTS `ProductPackDB` (
-  `ProuctpackID` INT(11) NOT NULL AUTO_INCREMENT,
+  `ProductpackID` INT(11) NOT NULL AUTO_INCREMENT,
   `Quantity`INT(11) NOT NULL,
   `ProductID` INT(11) NOT NULL,
   `Price` INT(11) NOT NULL,
-   PRIMARY KEY (`ProductpackID`)
-  FOREIGN KEY (`ProductID`) REFERENCES ProductDB (`ProductIDID`);
+  PRIMARY KEY (`ProductpackID`)
+  FOREIGN KEY (`ProductID`) REFERENCES ProductDB (`ProductID`);
   )
 
 ENGINE = InnoDB
