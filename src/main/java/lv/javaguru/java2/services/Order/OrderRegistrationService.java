@@ -1,15 +1,13 @@
 package lv.javaguru.java2.services.Order;
 
-import lv.javaguru.java2.domain.User;
+import lv.javaguru.java2.domain.Order;
 
 /**
  * Created by Vasja on 4/5/2017.
  */
 public interface OrderRegistrationService {
 
-    User register(String firstName,
-                  String lastName,
-                  String mail,
-                  String password);
+    Order register(Integer product,
+                  String mail);
 
 }
