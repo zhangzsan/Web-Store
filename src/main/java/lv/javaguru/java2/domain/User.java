@@ -8,7 +8,6 @@ public class User {
     private String mail;
     private String password;
 
-
     public Long getUserId() {
         return userId;
     }
