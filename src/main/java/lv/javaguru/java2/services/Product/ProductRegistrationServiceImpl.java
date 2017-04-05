@@ -1,26 +1,27 @@
 package lv.javaguru.java2.services.Product;
 
+import lv.javaguru.java2.database.ProductDAO;
+import lv.javaguru.java2.database.jdbc.ProductDAOImpl;
+import lv.javaguru.java2.domain.Product;
+
+import static lv.javaguru.java2.domain.ProductBuilder.createProduct;
+
 /**
  * Created by Aster on 05.04.2017.
  */
 public class ProductRegistrationServiceImpl implements ProductRegistrationService {
-    private UserValidator userValidator = new UserValidatorImpl();
-    private UserDAO userDAO = new UserDAOImpl();
-
+    private ProductValidator productValidator = new ProductValidatorImpl();
+    private ProductDAO productDAO = new ProductDAOImpl();
 
     @Override
-    public User register(String firstName,
-                         String lastName,
-                         String mail,
-                         String password) {
-        userValidator.validate(firstName, lastName, mail, password);
+    public Product register(String productName, String productCategory, Double price)  {
+            productValidator.validate(productName, productCategory, price);
 
-        User user = createUser()
-                .withFirstName(firstName)
-                .withLastName(lastName)
-                .withMail(mail)
-                .withPassword(password).build();
+            Product product = createProduct()
+                    .withProductName(productName)
+                    .withProductCategory(productCategory)
+                    .withPrice(price).build();
 
-        return userDAO.save(user);
+            return productDAO.save(product);
     }
 }

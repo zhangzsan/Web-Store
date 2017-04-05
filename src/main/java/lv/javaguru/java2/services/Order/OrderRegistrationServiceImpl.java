@@ -29,5 +29,4 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService
 
         return userDAO.save(user);
     }
-
 }

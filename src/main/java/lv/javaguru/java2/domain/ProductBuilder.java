@@ -12,7 +12,7 @@ public class ProductBuilder {
 
     private ProductBuilder() {}
 
-    public static ProductBuilder createUser() {
+    public static ProductBuilder createProduct() {
         return new ProductBuilder();
     }
 
