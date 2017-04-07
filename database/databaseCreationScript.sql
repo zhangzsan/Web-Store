@@ -16,15 +16,16 @@ CREATE TABLE IF NOT EXISTS `ClientDB` (
   `Mail` CHAR(32) NOT NULL,
   `Password` CHAR(32) NOT NULL,
   PRIMARY KEY (`ClientID`)
-)
+);
+
 CREATE TABLE IF NOT EXISTS `OrderDB` (
   `OrderID` INT(11) NOT NULL AUTO_INCREMENT,
   `ProdpackID`INT(11) NOT NULL,
   `Ordmoment` DATE,
   `Payment` INT(11) NOT NULL,
-   PRIMARY KEY (`OrderID`)
-  FOREIGN KEY (`ClientID`) REFERENCES Client DB (`ClientID`);
-  )
+   PRIMARY KEY (`OrderID`),
+  FOREIGN KEY (`ClientID`) REFERENCES ClientDB (`ClientID`)
+  );
 
   CREATE TABLE IF NOT EXISTS `ProductDB` (
   `ProductID` INT(11) NOT NULL AUTO_INCREMENT,
@@ -32,15 +33,15 @@ CREATE TABLE IF NOT EXISTS `OrderDB` (
   `Category` CHAR(32) NOT NULL,
   `Price` INT(11) NOT NULL,
   PRIMARY KEY (`ProductID`)
-)
+);
 
 CREATE TABLE IF NOT EXISTS `ProductPackDB` (
   `ProdpackID` INT(11) NOT NULL AUTO_INCREMENT,
   `Quantity`INT(11) NOT NULL,
   `ProductID` INT(11) NOT NULL,
   `Price` INT(11) NOT NULL,
-  PRIMARY KEY (`ProductpackID`)
-  FOREIGN KEY (`ProductID`) REFERENCES ProductDB (`ProductID`);
+  PRIMARY KEY (`ProductpackID`),
+  FOREIGN KEY (`ProductID`) REFERENCES ProductDB (`ProductID`)
   )
 
 ENGINE = InnoDB
