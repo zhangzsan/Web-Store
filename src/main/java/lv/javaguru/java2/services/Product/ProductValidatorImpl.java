@@ -15,19 +15,19 @@ public class ProductValidatorImpl implements ProductValidator{
 
     private void validateProductName(String productName) {
         if (productName == null || productName.isEmpty()) {
-            throw new IllegalArgumentException("First Name must be not empty!");
+            throw new IllegalArgumentException("Product Name must be not empty!");
         }
     }
 
     private void validateProductCategory(String productCategory) {
         if (productCategory == null || productCategory.isEmpty()) {
-            throw new IllegalArgumentException("Last Name must be not empty!");
+            throw new IllegalArgumentException("Product Category must be not empty!");
         }
     }
 
     private void validatePrice(Double price) {
         if (price == null) {
-            throw new IllegalArgumentException("Mail must be not empty!");
+            throw new IllegalArgumentException("Price must be not empty!");
         }
     }
 
