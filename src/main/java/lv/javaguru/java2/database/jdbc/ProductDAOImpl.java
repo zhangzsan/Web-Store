@@ -14,7 +14,7 @@ import java.util.Optional;
 public class ProductDAOImpl extends DAOImpl implements ProductDAO {
 
     @Override
-    public Product save(Product product) {
+    public Product save(Product product) throws DBException{
         Connection connection = null;
 
         try {
@@ -68,7 +68,7 @@ public class ProductDAOImpl extends DAOImpl implements ProductDAO {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Long id) throws DBException{
         Connection connection = null;
         try {
             connection = getConnection();
@@ -86,7 +86,7 @@ public class ProductDAOImpl extends DAOImpl implements ProductDAO {
     }
 
     @Override
-    public void update(Product product) {
+    public void update(Product product) throws DBException{
         if (product == null) {
             return;
         }
@@ -111,7 +111,7 @@ public class ProductDAOImpl extends DAOImpl implements ProductDAO {
     }
 
     @Override
-    public List<Product> getAll() {
+    public List<Product> getAll() throws DBException{
         List<Product> products = new ArrayList<Product>();
         Connection connection = null;
         try {

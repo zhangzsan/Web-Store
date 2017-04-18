@@ -2,21 +2,20 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-CREATE SCHEMA IF NOT EXISTS `java2` DEFAULT CHARACTER SET utf8 ;
-USE `java2` ;
+CREATE SCHEMA IF NOT EXISTS `java2.web-shop` DEFAULT CHARACTER SET utf8 ;
+USE `java2.web-shop` ;
 
 -- -----------------------------------------------------
 -- Table `Java2_test`.`users`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ClientDB` (
-  `ClientID` INT(11) NOT NULL AUTO_INCREMENT,
-  `FirstName` CHAR(32) NOT NULL,
-  `LastName` CHAR(32) NOT NULL,
-  `Mail` CHAR(32) NOT NULL,
-  `Password` CHAR(32) NOT NULL,
-  PRIMARY KEY (`ClientID`)
-);
+CREATE TABLE `java2.web-shop`.`clientdb` (
+  `ClientID` INT NOT NULL AUTO_INCREMENT,
+  `FirstName` VARCHAR(45) NOT NULL,
+  `LastName` VARCHAR(45) NOT NULL,
+  `Mail` VARCHAR(45) NOT NULL,
+  `Password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`ClientID`));
 
 CREATE TABLE IF NOT EXISTS `OrderDB` (
   `OrderID` INT(11) NOT NULL AUTO_INCREMENT,
@@ -27,13 +26,17 @@ CREATE TABLE IF NOT EXISTS `OrderDB` (
   FOREIGN KEY (`ClientID`) REFERENCES ClientDB (`ClientID`)
   );
 
-  CREATE TABLE IF NOT EXISTS `ProductDB` (
-  `ProductID` INT(11) NOT NULL AUTO_INCREMENT,
-  `Name` CHAR(32) NOT NULL,
-  `Category` CHAR(32) NOT NULL,
-  `Price` INT(11) NOT NULL,
-  PRIMARY KEY (`ProductID`)
-);
+CREATE TABLE `java2.web-shop`.`productdb` (
+  `ProductID` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(45) NOT NULL,
+  `Category` VARCHAR(45) NOT NULL,
+  `Price` DOUBLE NOT NULL,
+  PRIMARY KEY (`ProductID`));
+
+CREATE TABLE `java2.web-shop`.`categorydb` (
+  `CategoryID` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`CategoryID`));
 
 CREATE TABLE IF NOT EXISTS `ProductPackDB` (
   `ProdpackID` INT(11) NOT NULL AUTO_INCREMENT,
