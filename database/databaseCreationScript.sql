@@ -39,14 +39,14 @@ CREATE TABLE `java2.web-shop`.`categorydb` (
   `Name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CategoryID`));
 
-CREATE TABLE IF NOT EXISTS `ProductPackDB` (
-  `ProdpackID` INT(11) NOT NULL AUTO_INCREMENT,
-  `Quantity`INT(11) NOT NULL,
-  `ProductID` INT(11) NOT NULL,
-  `Price` INT(11) NOT NULL,
-  PRIMARY KEY (`ProductpackID`),
+CREATE TABLE `java2.web-shop`.`productpackdb` (
+  `ProdpackID` INT NOT NULL AUTO_INCREMENT,
+  `Quantity` INT NOT NULL,
+  `ProductID` INT NOT NULL,
+  `Price` DOUBLE NOT NULL,
+  PRIMARY KEY (`ProdpackID`),
   FOREIGN KEY (`ProductID`) REFERENCES ProductDB (`ProductID`)
-  )
+);
 
 ENGINE = InnoDB
 AUTO_INCREMENT = 1002;
