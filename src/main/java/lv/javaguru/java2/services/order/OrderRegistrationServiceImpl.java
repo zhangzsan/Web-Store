@@ -1,10 +1,10 @@
-package lv.javaguru.java2.services.Order;
+package lv.javaguru.java2.services.order;
 
 import lv.javaguru.java2.database.UserDAO;
 import lv.javaguru.java2.database.jdbc.UserDAOImpl;
 import lv.javaguru.java2.domain.User;
-import lv.javaguru.java2.services.User.UserValidator;
-import lv.javaguru.java2.services.User.UserValidatorImpl;
+import lv.javaguru.java2.services.user.UserValidator;
+import lv.javaguru.java2.services.user.UserValidatorImpl;
 
 import static lv.javaguru.java2.domain.UserBuilder.createUser;
 
