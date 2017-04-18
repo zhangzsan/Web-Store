@@ -11,7 +11,7 @@ import lv.javaguru.java2.domain.Order;
  */
 public interface OrderRegistrationService {
 
-    Order register(Integer product,
+    Order register(Integer productID,
                    String mail,
                    Integer quantity);
 

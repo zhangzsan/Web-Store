@@ -1,32 +1,32 @@
 package lv.javaguru.java2.services.Order;
 
-import lv.javaguru.java2.database.UserDAO;
-import lv.javaguru.java2.database.jdbc.UserDAOImpl;
-import lv.javaguru.java2.domain.User;
-import lv.javaguru.java2.services.User.UserValidator;
-import lv.javaguru.java2.services.User.UserValidatorImpl;
-
-import static lv.javaguru.java2.domain.UserBuilder.createUser;
+import lv.javaguru.java2.database.OrderDAO;
+import lv.javaguru.java2.database.jdbc.OrderDAOImpl;
+import lv.javaguru.java2.domain.Order;
+import lv.javaguru.java2.services.order.OrderRegistrationService;
+import lv.javaguru.java2.services.order.OrderValidator;
+import lv.javaguru.java2.services.order.OrderValidatorImpl;
+import static lv.javaguru.java2.domain.OrderBuilder.createOrder;
 
 public class OrderRegistrationServiceImpl implements OrderRegistrationService
 
-    private UserValidator userValidator = new UserValidatorImpl();
-    private UserDAO userDAO = new UserDAOImpl();
+    private OrderValidator orderValidator = new OrderValidatorImpl();
+    private OrderDAO orderDAO = new OrderDAOImpl();
 
 
     @Override
-    public User register(String firstName,
-                         String lastName,
-                         String mail,
-                         String password) {
-        userValidator.validate(firstName, lastName, mail, password);
+    public Order register(Integer productID,
+                          String mail,
+                          Integer quantity) {
+        orderValidator.validate(productID, mail, quantity);
 
-        User user = createUser()
-                .withFirstName(firstName)
-                .withLastName(lastName)
+        Order order = createOrder()
+                .withProductID(productID)
                 .withMail(mail)
-                .withPassword(password).build();
+                .withQuantity(quantity).build();
 
-        return userDAO.save(user);
+        return orderDAO.save(order);
     }
+
+
 }

@@ -5,7 +5,7 @@ import lv.javaguru.java2.domain.User;
 import java.util.List;
 import java.util.Optional;
 
-public interface FinalOrderDAO {
+public interface OrderDAO {
 
     Order save(Order Order);
 
