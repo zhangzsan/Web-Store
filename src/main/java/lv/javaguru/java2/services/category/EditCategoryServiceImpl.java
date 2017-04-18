@@ -1,4 +1,4 @@
-package lv.javaguru.java2.services.Category;
+package lv.javaguru.java2.services.category;
 
 import lv.javaguru.java2.database.CategoryDAO;
 import lv.javaguru.java2.database.jdbc.CategoryDAOImpl;

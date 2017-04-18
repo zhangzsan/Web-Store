@@ -1,4 +1,4 @@
-package lv.javaguru.java2.services.Order;
+package lv.javaguru.java2.services.order;
 
 import lv.javaguru.java2.domain.Order;
 

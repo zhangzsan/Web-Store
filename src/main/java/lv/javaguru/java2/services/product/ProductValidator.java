@@ -1,4 +1,4 @@
-package lv.javaguru.java2.services.Product;
+package lv.javaguru.java2.services.product;
 
 /**
  * Created by Aster on 05.04.2017.

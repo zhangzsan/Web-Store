@@ -1,20 +1,21 @@
-package lv.javaguru.java2.services.Order;
+package lv.javaguru.java2.services.order;
 
 import lv.javaguru.java2.database.UserDAO;
 import lv.javaguru.java2.database.jdbc.UserDAOImpl;
+import lv.javaguru.java2.domain.Order;
 import lv.javaguru.java2.domain.User;
-import lv.javaguru.java2.services.User.UserValidator;
-import lv.javaguru.java2.services.User.UserValidatorImpl;
+import lv.javaguru.java2.services.user.UserValidator;
+import lv.javaguru.java2.services.user.UserValidatorImpl;
 
 import static lv.javaguru.java2.domain.UserBuilder.createUser;
 
-public class OrderRegistrationServiceImpl implements OrderRegistrationService
+public class OrderRegistrationServiceImpl implements OrderRegistrationService {
 
     private UserValidator userValidator = new UserValidatorImpl();
     private UserDAO userDAO = new UserDAOImpl();
 
 
-    @Override
+    //@Override
     public User register(String firstName,
                          String lastName,
                          String mail,
@@ -28,5 +29,10 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService
                 .withPassword(password).build();
 
         return userDAO.save(user);
+    }
+
+    @Override
+    public Order register(Integer product, String mail) {
+        return null;
     }
 }
