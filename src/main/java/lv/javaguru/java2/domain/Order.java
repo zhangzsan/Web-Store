@@ -17,12 +17,11 @@ public class Order {
         this.userId = userId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getProductID() {
+        return productID;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
