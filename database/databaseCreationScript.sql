@@ -17,14 +17,15 @@ CREATE TABLE `java2.web-shop`.`clientdb` (
   `Password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`ClientID`));
 
-CREATE TABLE IF NOT EXISTS `OrderDB` (
-  `OrderID` INT(11) NOT NULL AUTO_INCREMENT,
-  `ProdpackID`INT(11) NOT NULL,
-  `Ordmoment` DATE,
-  `Payment` INT(11) NOT NULL,
-   PRIMARY KEY (`OrderID`),
+CREATE TABLE `java2.web-shop`.`orderdb` (
+  `OrderID` INT NOT NULL AUTO_INCREMENT,
+  `ClientID` INT NOT NULL,
+  `ProdPackID` INT NOT NULL,
+  `Ordmoment` DATE NOT NULL,
+  `Payment` DOUBLE NOT NULL,
+  PRIMARY KEY (`OrderID`),
   FOREIGN KEY (`ClientID`) REFERENCES ClientDB (`ClientID`)
-  );
+);
 
 CREATE TABLE `java2.web-shop`.`productdb` (
   `ProductID` INT NOT NULL AUTO_INCREMENT,
