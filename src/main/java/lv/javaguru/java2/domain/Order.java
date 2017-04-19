@@ -17,11 +17,11 @@ public class Order {
         this.userId = userId;
     }
 
-    public String getProductID() {
+    public Integer getProductID() {
         return productID;
     }
 
-    public void setFirstName(String firstName) {
+    public void setProductID(String productID) {
     }
 
     public String getMail() {
@@ -36,7 +36,7 @@ public class Order {
         return quantity;
     }
 
-    public void setPassword(Integer password) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }c
+    }
 }
