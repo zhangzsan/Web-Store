@@ -24,14 +24,6 @@ public class Order {
     public void setFirstName(String firstName) {
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getMail() {
         return mail;
     }
@@ -40,11 +32,11 @@ public class Order {
         this.mail = mail;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(Integer password) {
+        this.quantity = quantity;
     }c
 }
