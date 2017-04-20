@@ -21,7 +21,7 @@ public class Order {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID(Integer productID) {
     }
 
     public String getMail() {

@@ -8,7 +8,7 @@ import lv.javaguru.java2.services.order.OrderValidator;
 import lv.javaguru.java2.services.order.OrderValidatorImpl;
 import static lv.javaguru.java2.domain.OrderBuilder.createOrder;
 
-public class OrderRegistrationServiceImpl implements OrderRegistrationService
+public class OrderRegistrationServiceImpl implements OrderRegistrationService{
 
     private OrderValidator orderValidator = new OrderValidatorImpl();
     private OrderDAO orderDAO = new OrderDAOImpl();

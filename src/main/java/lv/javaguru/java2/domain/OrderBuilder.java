@@ -19,7 +19,7 @@ public class OrderBuilder {
         order.setProductID(productID);
         order.setMail(mail);
         order.setQuantity(quantity);
-        return Order;
+        return order;
     }
 
     public OrderBuilder withProductID(Integer productID) {
