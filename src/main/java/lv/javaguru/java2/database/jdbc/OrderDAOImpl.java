@@ -2,7 +2,6 @@ package lv.javaguru.java2.database.jdbc;
 
         import lv.javaguru.java2.database.DBException;
         import lv.javaguru.java2.database.OrderDAO;
-        import lv.javaguru.java2.database.UserDAO;
         import lv.javaguru.java2.domain.Order;
         import lv.javaguru.java2.domain.OrderBuilder;
         import lv.javaguru.java2.domain.User;
@@ -25,42 +24,42 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
         try {
             connection = getConnection();
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("insert into USERS values (default, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+                    connection.prepareStatement("insert into ORDERS values (default, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, order.getproductid());
 
             preparedStatement.executeUpdate();
             ResultSet rs = preparedStatement.getGeneratedKeys();
             if (rs.next()){
-                user.setUserId(rs.getLong(1));
+                order.setOrderId(rs.getLong(1));
             }
         } catch (Throwable e) {
-            System.out.println("Exception while execute UserDAOImpl.save()");
+            System.out.println("Exception while execute orderDAOImpl.save()");
             e.printStackTrace();
             throw new DBException(e);
         } finally {
             closeConnection(connection);
         }
 
-        return user;
+        return order;
     }
 
-    public Optional<User> getById(Long id) throws DBException {
-        Connection connection = null;
+    public Optional<Order> getById(Long id) throws DBException {
+        Connection connection = null; //** Open connection with DB
 
-        try {
+        try { //**
             connection = getConnection();
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("select * from USERS where UserID = ?");
+                    .prepareStatement("select * from orderS where orderID = ?");
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            User user = null;
+            Order order = null;
             if (resultSet.next()) {
-                user = new User();
-                user.setUserId(resultSet.getLong("UserID"));
-                user.setFirstName(resultSet.getString("FirstName"));
-                user.setLastName(resultSet.getString("LastName"));
+                order = new Order();
+                order.setUserId(resultSet.getLong("UserID"));
+                order.setOrderID(resultSet.getLong("Order ID"));
+                order.setLastName(resultSet.getString("LastName"));
             }
-            return Optional.ofNullable(user);
+            return Optional.ofNullable(order);
         } catch (Throwable e) {
             System.out.println("Exception while execute UserDAOImpl.getById()");
             e.printStackTrace();
@@ -70,20 +69,20 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
         }
     }
 
-    public List<User> getAll() throws DBException {
-        List<User> users = new ArrayList<User>();
+    public List<Order> getAll() throws DBException {
+        List<Order> orders = new ArrayList<Order>();
         Connection connection = null;
         try {
             connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from USERS");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from ORDERS");
 
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                User user = new User();
-                user.setUserId(resultSet.getLong("UserID"));
-                user.setFirstName(resultSet.getString("FirstName"));
-                user.setLastName(resultSet.getString("LastName"));
-                users.add(user);
+                Order order = new Order();
+                order.setUserId(resultSet.getLong("UserID"));
+                order.setFirstName(resultSet.getString("FirstName"));
+                order.setLastName(resultSet.getString("LastName"));
+                orders.add(order);
             }
         } catch (Throwable e) {
             System.out.println("Exception while getting customer list UserDAOImpl.getList()");
@@ -92,7 +91,7 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
         } finally {
             closeConnection(connection);
         }
-        return users;
+        return orders;
     }
 
     public void delete(Long id) throws DBException {
@@ -112,8 +111,8 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
         }
     }
 
-    public void update(User user) throws DBException {
-        if (user == null) {
+    public void update(Order order) throws DBException {
+        if (order == null) {
             return;
         }
 

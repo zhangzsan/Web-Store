@@ -9,7 +9,7 @@ USE `java2.web-shop` ;
 -- Table `Java2_test`.`users`
 -- -----------------------------------------------------
 
-CREATE TABLE `java2.web-shop`.`clientdb` (
+CREATE TABLE IF NOT EXISTS `java2.web-shop`.`clientdb` (
   `ClientID` INT NOT NULL AUTO_INCREMENT,
   `FirstName` VARCHAR(45) NOT NULL,
   `LastName` VARCHAR(45) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `java2.web-shop`.`clientdb` (
   `Password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`ClientID`));
 
-CREATE TABLE `java2.web-shop`.`orderdb` (
+CREATE TABLE IF NOT EXISTS `java2.web-shop`.`orderdb` (
   `OrderID` INT NOT NULL AUTO_INCREMENT,
   `ClientID` INT NOT NULL,
   `ProdPackID` INT NOT NULL,
@@ -27,20 +27,20 @@ CREATE TABLE `java2.web-shop`.`orderdb` (
   FOREIGN KEY (`ClientID`) REFERENCES ClientDB (`ClientID`)
 );
 
-CREATE TABLE `java2.web-shop`.`productdb` (
-  `ProductID` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS`java2.web-shop`.`productdb` (
+  `ProductID` INT NOT NULL AUTO_INCREMENT = 1001,
   `Name` VARCHAR(45) NOT NULL,
   `Category` VARCHAR(45) NOT NULL,
   `Price` DOUBLE NOT NULL,
   PRIMARY KEY (`ProductID`));
 
-CREATE TABLE `java2.web-shop`.`categorydb` (
-  `CategoryID` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `java2.web-shop`.`categorydb` (
+  `CategoryID` INT NOT NULL AUTO_INCREMENT = 10001,
   `Name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CategoryID`));
 
-CREATE TABLE `java2.web-shop`.`productpackdb` (
-  `ProdpackID` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS`java2.web-shop`.`productpackdb` (
+  `ProdpackID` INT NOT NULL AUTO_INCREMENT = 100001,
   `Quantity` INT NOT NULL,
   `ProductID` INT NOT NULL,
   `Price` DOUBLE NOT NULL,
@@ -49,7 +49,6 @@ CREATE TABLE `java2.web-shop`.`productpackdb` (
 );
 
 ENGINE = InnoDB
-AUTO_INCREMENT = 1002;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
