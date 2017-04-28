@@ -13,6 +13,8 @@ public interface OrderRegistrationService {
 
     Order register(Integer productID,
                    String mail,
-                   Integer quantity);
+                   Integer quantity,
+                   Integer prodpacID,
+                   );
 
 }

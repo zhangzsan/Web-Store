@@ -14,7 +14,9 @@ package lv.javaguru.java2.database.jdbc;
         import java.util.Optional;
 
 /**
- * Order DAO implementation
+ * Order DAO
+ * Logic of adding order to Data Base
+ *
  */
 public class OrderDAOImpl extends DAOImpl implements OrderDAO {
 
@@ -111,6 +113,7 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
         }
     }
 
+//    Communication with DB for updates
     public void update(Order order) throws DBException {
         if (order == null) {
             return;
@@ -120,11 +123,11 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
         try {
             connection = getConnection();
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("update USERS set FirstName = ?, LastName = ? " +
-                            "where UserID = ?");
-            preparedStatement.setString(1, user.getFirstName());
-            preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setLong(3, user.getUserId());
+                    .prepareStatement("update USERS ORDER set ProductID = ?, Quantity = ? " +
+                            "where ProdpackID = ?");
+            preparedStatement.setString(1, order.getProdpackID());
+            preparedStatement.setString(2, order.getProductID());
+            preparedStatement.setString(3, order.getQuantity());
             preparedStatement.executeUpdate();
         } catch (Throwable e) {
             System.out.println("Exception while execute UserDAOImpl.update()");

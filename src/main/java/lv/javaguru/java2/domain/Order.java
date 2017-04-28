@@ -8,6 +8,7 @@ public class Order {
     private Integer productID;
     private String mail;
     private Integer quantity;
+    private Integer prodpackID;
 
     public Long getUserId() {
         return userId;
@@ -38,5 +39,11 @@ public class Order {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Integer getProdpackID() { return prodpackID; }
+
+    public void setProdpackID(Integer prodpackID) {
+        this.prodpackID = prodpackID;
     }
 }

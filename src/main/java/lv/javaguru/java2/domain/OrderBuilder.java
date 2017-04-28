@@ -6,6 +6,7 @@ public class OrderBuilder {
     private Integer productID;
     private String mail;
     private Integer quantity;
+    private Integer prodpackID;
 
 
     private OrderBuilder() {}
@@ -19,6 +20,7 @@ public class OrderBuilder {
         order.setProductID(productID);
         order.setMail(mail);
         order.setQuantity(quantity);
+        order.setProductID(prodpackID);
         return order;
     }
 
@@ -34,6 +36,11 @@ public class OrderBuilder {
 
     public OrderBuilder withQuantity(Integer quantity) {
         this.quantity = quantity;
+        return this;
+    }
+
+    public OrderBuilder withProdpackID(Integer productID){
+        this.prodpackID = prodpackID;
         return this;
     }
 

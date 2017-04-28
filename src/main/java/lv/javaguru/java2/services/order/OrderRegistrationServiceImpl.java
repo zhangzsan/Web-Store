@@ -17,13 +17,15 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService{
     @Override
     public Order register(Integer productID,
                           String mail,
-                          Integer quantity) {
-        orderValidator.validate(productID, mail, quantity);
+                          Integer quantity,
+                          Integer prodpackID) {
+        orderValidator.validate(productID, mail, quantity, prodpackID);
 
         Order order = createOrder()
                 .withProductID(productID)
                 .withMail(mail)
-                .withQuantity(quantity).build();
+                .withQuantity(quantity).build()
+                .withProdpackID;
 
         return orderDAO.save(order);
     }
