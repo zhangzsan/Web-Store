@@ -82,7 +82,7 @@ public class OrderDAOImpl extends DAOImpl implements OrderDAO {
             while (resultSet.next()) {
                 Order order = new Order();
                 order.setUserId(resultSet.getLong("UserID"));
-                order.setFirstName(resultSet.getString("FirstName"));
+                order.setProdPackID(resultSet.getInt("ProdPackID"));
                 order.setLastName(resultSet.getString("LastName"));
                 orders.add(order);
             }

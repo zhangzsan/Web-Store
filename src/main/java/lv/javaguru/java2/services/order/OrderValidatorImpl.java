@@ -9,13 +9,19 @@ public class OrderValidatorImpl implements OrderValidator {
     @Override
     public void validate(Integer productID,
                          String mail,
-                         Integer quantity) {
+                         Integer quantity,
+                         Integer prodpackID) {
         validateProductID(productID);
         validateMail(mail);
         validateQuantity(quantity);
+        validateProdpackID (prodpackID;
     }
 
-    private void validateProductID(Integer productID) {
+    private void validateProdpackID(Integer prodpackID) {
+        if (prodpackID=null){
+            throw new IllegalArgumentException("Product ID must be not empty!");
+        }
+}   private void validateProductID(Integer productID) {
         if (productID == null) {
             throw new IllegalArgumentException("Product ID must be not empty!");
         }

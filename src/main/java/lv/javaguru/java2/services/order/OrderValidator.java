@@ -8,5 +8,6 @@ public interface OrderValidator
 {
     void validate(Integer productID,
                   String mail,
-                  Integer quantity);
+                  Integer quantity,
+                  Integer prodpackID);
 }
