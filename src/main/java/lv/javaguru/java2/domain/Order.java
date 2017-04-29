@@ -9,6 +9,7 @@ public class Order {
     private String mail;
     private Integer quantity;
     private Integer prodpackID;
+    public Order withProdpackID;
 
     public Long getUserId() {
         return userId;
@@ -43,7 +44,7 @@ public class Order {
 
     public Integer getProdpackID() { return prodpackID; }
 
-    public void setProdpackID(Integer prodpackID) {
-        this.prodpackID = prodpackID;
+    public void setProdPackID(Integer prodPackID) {
+        this.prodpackID = prodPackID;
     }
 }
