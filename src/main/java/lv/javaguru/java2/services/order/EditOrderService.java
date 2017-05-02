@@ -7,7 +7,7 @@ public interface EditOrderService {
 
     void edit(Integer productID,
               Integer quantity,
-              Integer prodpackID,
+              Integer prodpackID
               );
 
 }

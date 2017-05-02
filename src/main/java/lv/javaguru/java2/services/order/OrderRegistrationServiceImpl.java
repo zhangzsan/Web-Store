@@ -1,11 +1,14 @@
+package lv.javaguru.java2.services.Order;
+
 import lv.javaguru.java2.database.OrderDAO;
 import lv.javaguru.java2.database.jdbc.OrderDAOImpl;
 import lv.javaguru.java2.domain.Order;
+import lv.javaguru.java2.domain.OrderBuilder;
 import lv.javaguru.java2.services.order.OrderRegistrationService;
 import lv.javaguru.java2.services.order.OrderValidator;
 import lv.javaguru.java2.services.order.OrderValidatorImpl;
 import static lv.javaguru.java2.domain.OrderBuilder.createOrder;
-package lv.javaguru.java2.services.Order;
+
 
 public class OrderRegistrationServiceImpl implements OrderRegistrationService{
 
@@ -20,11 +23,11 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService{
                           Integer prodpackID) {
         orderValidator.validate(productID, quantity, prodpackID);
 
-        Order order = createOrder()
+        OrderBuilder order = createOrder()
                 .withProductID(productID)
                 .withMail(mail)
-                .withQuantity(quantity).build()
-                .withProdpackID;
+                .withQuantity(quantity)
+                .withProdpackID(prodpackID);
 
         return orderDAO.save(order);
     }

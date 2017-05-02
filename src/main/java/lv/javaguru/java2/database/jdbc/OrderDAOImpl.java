@@ -4,7 +4,6 @@ package lv.javaguru.java2.database.jdbc;
         import lv.javaguru.java2.database.OrderDAO;
         import lv.javaguru.java2.domain.Order;
         import lv.javaguru.java2.domain.OrderBuilder;
-        import lv.javaguru.java2.domain.User;
 
         import java.sql.Connection;
         import java.sql.PreparedStatement;
@@ -20,7 +19,7 @@ package lv.javaguru.java2.database.jdbc;
  */
 public class OrderDAOImpl extends DAOImpl implements OrderDAO {
 
-    public Order save(Order Order) throws DBException {
+    public Order save(OrderBuilder Order) throws DBException {
         Connection connection = null;
 
         try {

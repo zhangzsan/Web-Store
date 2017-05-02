@@ -20,13 +20,13 @@ public class EditOrderServiceImpl implements EditOrderService{
                      Integer NewQuantity,
                      Integer NewProdpackID ){
         Optional<Order> userOpt = orderDAO.getById(userId);
-        if (!orderOpt.isPresent()) {
+        if (!OrderDAO.isPresent()) {
             throw new IllegalArgumentException("User not found by id = " + userId);
         }
 
         orderValidator.validate(NewProductID, NewQuantity, NewProdpackID);
 
-        Order order = orderOpt.get();
+        Order order = OrderDAO.get();
         order.setNewProductID(newProductID);
         order.setNewQuantity (newQuantity);
         orderDAO.update(order);

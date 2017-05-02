@@ -11,7 +11,6 @@ public class OrderValidatorImpl implements OrderValidator {
                          Integer quantity,
                          Integer prodpackID) {
         validateProductID(productID);
-        validateMail(mail);
         validateQuantity(quantity);
         validateProdpackID (prodpackID;
     }
@@ -20,15 +19,10 @@ public class OrderValidatorImpl implements OrderValidator {
         if (prodpackID == null){
             throw new IllegalArgumentException("Product ID must be not empty!");
         }
-}   private void validateProductID(Integer productID) {
+}
+    private void validateProductID(Integer productID) {
         if (productID == null) {
             throw new IllegalArgumentException("Product ID must be not empty!");
-        }
-    }
-
-    private void validateMail(String mail) {
-        if (mail == null || mail.isEmpty()) {
-            throw new IllegalArgumentException("Mail must be not empty!");
         }
     }
 
