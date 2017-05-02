@@ -21,14 +21,7 @@ public class OrderValidatorImplTest {
     public void shouldThrowExceptionWhenFirstNameIsNull() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Product ID must be not empty!");
-        validator.validate(null, "quantity", "prodpackID");
-    }
-
-    @Test
-    public void shouldThrowExceptionWhenFirstNameIsEmpty() {
-        thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("Product ID must be not empty!");
-        validator.validate("", "quantity", "prodpackID");
+        validator.validate(null, 1234, 2345);
     }
 }
 //(Integer productID,
