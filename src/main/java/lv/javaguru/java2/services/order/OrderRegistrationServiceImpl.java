@@ -1,5 +1,3 @@
-package lv.javaguru.java2.services.Order;
-
 import lv.javaguru.java2.database.OrderDAO;
 import lv.javaguru.java2.database.jdbc.OrderDAOImpl;
 import lv.javaguru.java2.domain.Order;
@@ -7,6 +5,7 @@ import lv.javaguru.java2.services.order.OrderRegistrationService;
 import lv.javaguru.java2.services.order.OrderValidator;
 import lv.javaguru.java2.services.order.OrderValidatorImpl;
 import static lv.javaguru.java2.domain.OrderBuilder.createOrder;
+package lv.javaguru.java2.services.Order;
 
 public class OrderRegistrationServiceImpl implements OrderRegistrationService{
 
