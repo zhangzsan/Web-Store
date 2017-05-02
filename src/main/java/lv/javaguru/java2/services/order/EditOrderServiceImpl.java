@@ -26,7 +26,7 @@ public class EditOrderServiceImpl implements EditOrderService{
 
         orderValidator.validate(NewProductID, NewQuantity, NewProdpackID);
 
-        Order order = userOpt.get();
+        Order order = orderOpt.get();
         order.setNewProductID(newProductID);
         order.setNewQuantity (newQuantity);
         orderDAO.update(order);
