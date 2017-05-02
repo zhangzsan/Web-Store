@@ -9,6 +9,7 @@ import org.junit.rules.ExpectedException;
 /**
  * Validation test
  */
+
 public class OrderValidatorImplTest {
     private OrderValidator validator = new OrderValidatorImpl();
 
@@ -19,14 +20,18 @@ public class OrderValidatorImplTest {
     @Test
     public void shouldThrowExceptionWhenFirstNameIsNull() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
-        validator.validate(null, "password", "mail", "password");
+        thrown.expectMessage("Product ID must be not empty!");
+        validator.validate(null, "quantity", "prodpackID");
     }
 
     @Test
     public void shouldThrowExceptionWhenFirstNameIsEmpty() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
-        validator.validate("", "password", "mail", "password");
+        thrown.expectMessage("Product ID must be not empty!");
+        validator.validate("", "quantity", "prodpackID");
     }
 }
+//(Integer productID,
+//        String mail,
+//        Integer quantity,
+//        Integer prodpackID)

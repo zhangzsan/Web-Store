@@ -19,7 +19,7 @@ public class OrderRegistrationServiceImpl implements OrderRegistrationService{
                           String mail,
                           Integer quantity,
                           Integer prodpackID) {
-        orderValidator.validate(productID, mail, quantity, prodpackID);
+        orderValidator.validate(productID, quantity, prodpackID);
 
         Order order = createOrder()
                 .withProductID(productID)

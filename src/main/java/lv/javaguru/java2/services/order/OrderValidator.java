@@ -6,8 +6,6 @@ package lv.javaguru.java2.services.order;
  */
 public interface OrderValidator
 {
-    void validate(Integer productID,
-                  String mail,
-                  Integer quantity,
-                  Integer prodpackID);
+    void validate(Integer productID, Integer quantity, Integer prodpackID);
+
 }

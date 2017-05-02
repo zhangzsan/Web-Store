@@ -8,7 +8,6 @@ public class OrderValidatorImpl implements OrderValidator {
 
     @Override
     public void validate(Integer productID,
-                         String mail,
                          Integer quantity,
                          Integer prodpackID) {
         validateProductID(productID);
@@ -18,7 +17,7 @@ public class OrderValidatorImpl implements OrderValidator {
     }
 
     private void validateProdpackID(Integer prodpackID) {
-        if (prodpackID=null){
+        if (prodpackID == null){
             throw new IllegalArgumentException("Product ID must be not empty!");
         }
 }   private void validateProductID(Integer productID) {
