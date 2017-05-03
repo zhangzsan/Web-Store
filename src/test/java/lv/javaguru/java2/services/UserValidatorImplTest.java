@@ -31,43 +31,50 @@ public class UserValidatorImplTest {
     @Test
     public void shouldThrowExceptionWhenLastNameIsNull() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
+        thrown.expectMessage("Last Name must be not empty!");
         validator.validate("firstName", null, "mail", "password");
     }
 
     @Test
     public void shouldThrowExceptionWhenLastNameIsEmpty() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
+        thrown.expectMessage("Last Name must be not empty!");
         validator.validate("firstName", "", "mail", "password");
     }
 
     @Test
     public void shouldThrowExceptionWhenMailIsNull() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
+        thrown.expectMessage("Mail must be not empty!");
         validator.validate("firstName", "lastName", null, "password");
     }
 
     @Test
     public void shouldThrowExceptionWhenMailIsEmpty() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
+        thrown.expectMessage("Mail must be not empty!");
         validator.validate("firstName", "lastName", "", "password");
     }
 
     @Test
     public void shouldThrowExceptionWhenPasswordIsNull() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
+        thrown.expectMessage("Password must be not empty!");
         validator.validate("firstName", "lastName", "mail", null);
     }
 
     @Test
     public void shouldThrowExceptionWhenPasswordIsEmpty() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("First Name must be not empty!");
+        thrown.expectMessage("Password must be not empty!");
         validator.validate("firstName", "lastName", "mail", "");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenPasswordIsShort() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Password must be longer!");
+        validator.validate("firstName", "lastName", "mail", "less8");
     }
 
     // write more tests

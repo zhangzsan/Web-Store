@@ -11,6 +11,7 @@ public class UserValidatorImpl implements UserValidator {
         validateLastName(lastName);
         validateMail(mail);
         validatePassword(password);
+        validatePasswordLength(password);
     }
 
     private void validateFirstName(String firstName) {
@@ -34,6 +35,13 @@ public class UserValidatorImpl implements UserValidator {
     private void validatePassword(String password) {
         if (password == null || password.isEmpty()) {
             throw new IllegalArgumentException("Password must be not empty!");
+        }
+    }
+
+    private void validatePasswordLength(String password) {
+        for ( int i = 0; i < password.length(); i++ )
+        if (i < 8) {
+            throw new IllegalArgumentException("Password must be longer!");
         }
     }
 
