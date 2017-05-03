@@ -4,6 +4,7 @@ package lv.javaguru.java2.database.jdbc;
         import lv.javaguru.java2.database.OrderDAO;
         import lv.javaguru.java2.domain.Order;
         import lv.javaguru.java2.domain.OrderBuilder;
+        import org.springframework.stereotype.Component;
 
         import java.sql.Connection;
         import java.sql.PreparedStatement;
@@ -17,6 +18,7 @@ package lv.javaguru.java2.database.jdbc;
  * Logic of adding order to Data Base
  *
  */
+@Component
 public class OrderDAOImpl extends DAOImpl implements OrderDAO {
 
     public Order save(OrderBuilder Order) throws DBException {
