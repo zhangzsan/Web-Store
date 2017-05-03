@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface OrderDAO {
 
-    Order save(OrderBuilder Order);
+    Order save(Order Order);
 
     Optional<Order> getById(Long id);
 

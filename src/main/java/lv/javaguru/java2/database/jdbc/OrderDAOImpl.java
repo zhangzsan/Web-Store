@@ -3,7 +3,6 @@ package lv.javaguru.java2.database.jdbc;
         import lv.javaguru.java2.database.DBException;
         import lv.javaguru.java2.database.OrderDAO;
         import lv.javaguru.java2.domain.Order;
-        import lv.javaguru.java2.domain.OrderBuilder;
         import org.springframework.stereotype.Component;
 
         import java.sql.Connection;
@@ -21,19 +20,19 @@ package lv.javaguru.java2.database.jdbc;
 @Component
 public class OrderDAOImpl extends DAOImpl implements OrderDAO {
 
-    public Order save(OrderBuilder Order) throws DBException {
+    public Order save(Order order) throws DBException {
         Connection connection = null;
 
         try {
             connection = getConnection();
             PreparedStatement preparedStatement =
                     connection.prepareStatement("insert into ORDERS values (default, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, order.getproductid());
+            preparedStatement.setInt(1, order.getProductID());
 
             preparedStatement.executeUpdate();
             ResultSet rs = preparedStatement.getGeneratedKeys();
             if (rs.next()){
-                order.setOrderId(rs.getLong(1));
+                order.setOrderId(rs.getInt(1));
             }
         } catch (Throwable e) {
             System.out.println("Exception while execute orderDAOImpl.save()");
