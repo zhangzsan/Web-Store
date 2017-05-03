@@ -1,7 +1,5 @@
-package lv.javaguru.java2.services;
+package lv.javaguru.java2.services.order;
 
-import lv.javaguru.java2.services.order.OrderValidator;
-import lv.javaguru.java2.services.order.OrderValidatorImpl;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

@@ -1,7 +1,5 @@
-package lv.javaguru.java2.services;
+package lv.javaguru.java2.services.user;
 
-import lv.javaguru.java2.services.user.UserValidator;
-import lv.javaguru.java2.services.user.UserValidatorImpl;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

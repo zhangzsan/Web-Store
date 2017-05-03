@@ -19,7 +19,7 @@ public class EditProductServiceImpl implements EditProductService{
 
         Optional<Product> productOpt = productDAO.getById(productId);
         if (!productOpt.isPresent()) {
-            throw new IllegalArgumentException("User not found by id = " + productId);
+            throw new IllegalArgumentException("Category not found by id = " + productId);
         }
 
         productValidator.validate(newProductName, newProductCategory, newPrice);

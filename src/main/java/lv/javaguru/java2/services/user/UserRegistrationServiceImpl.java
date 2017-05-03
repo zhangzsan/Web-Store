@@ -11,6 +11,12 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
     private UserValidator userValidator = new UserValidatorImpl();
     private UserDAO userDAO = new UserDAOImpl();
 
+    public UserRegistrationServiceImpl(UserValidator userValidator,
+                                          UserDAO userDAO) {
+        this.userValidator = userValidator;
+        this.userDAO = userDAO;
+    }
+
 
     @Override
     public User register(String firstName,

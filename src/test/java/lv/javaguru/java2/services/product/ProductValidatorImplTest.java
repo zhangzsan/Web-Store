@@ -1,7 +1,5 @@
-package lv.javaguru.java2.services;
+package lv.javaguru.java2.services.product;
 
-import lv.javaguru.java2.services.product.ProductValidator;
-import lv.javaguru.java2.services.product.ProductValidatorImpl;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

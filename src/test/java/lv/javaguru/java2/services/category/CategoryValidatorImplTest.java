@@ -1,7 +1,5 @@
-package lv.javaguru.java2.services;
+package lv.javaguru.java2.services.category;
 
-import lv.javaguru.java2.services.category.CategoryValidator;
-import lv.javaguru.java2.services.category.CategoryValidatorImpl;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
