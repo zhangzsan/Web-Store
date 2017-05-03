@@ -72,7 +72,7 @@ public class UserValidatorImplTest {
     public void shouldThrowExceptionWhenPasswordIsShort() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Password must be longer!");
-        validator.validate("firstName", "lastName", "mail", "less8");
+        validator.validate("firstName", "lastName", "mail", "lessth8");
     }
 
     // write more tests

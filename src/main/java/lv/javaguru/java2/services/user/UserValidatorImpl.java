@@ -39,7 +39,7 @@ public class UserValidatorImpl implements UserValidator {
     }
 
     private void validatePasswordLength(String password) {
-        for ( int i = 0; i < password.length(); i++ )
+        for (int i = 0; i < password.length(); i++ )
         if (i < 8) {
             throw new IllegalArgumentException("Password must be longer!");
         }
