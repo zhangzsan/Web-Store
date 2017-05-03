@@ -2,16 +2,22 @@ package lv.javaguru.java2.services.product;
 
 import lv.javaguru.java2.database.ProductDAO;
 import lv.javaguru.java2.domain.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import static lv.javaguru.java2.domain.ProductBuilder.createProduct;
 
 /**
  * Created by Aster on 05.04.2017.
  */
+
+@Component
 public class
 ProductRegistrationServiceImpl implements ProductRegistrationService {
 
+    @Autowired
     private ProductValidator productValidator;
+    @Autowired
     private ProductDAO productDAO;
 
     public ProductRegistrationServiceImpl(ProductValidator productValidator,
