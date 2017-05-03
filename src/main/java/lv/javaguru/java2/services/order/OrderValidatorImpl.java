@@ -12,7 +12,7 @@ public class OrderValidatorImpl implements OrderValidator {
                          Integer prodpackID) {
         validateProductID(productID);
         validateQuantity(quantity);
-        validateProdpackID (prodpackID;
+        validateProdpackID (prodpackID);
     }
 
     private void validateProdpackID(Integer prodpackID) {

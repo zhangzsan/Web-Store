@@ -8,7 +8,8 @@ import static lv.javaguru.java2.domain.ProductBuilder.createProduct;
 /**
  * Created by Aster on 05.04.2017.
  */
-public class ProductRegistrationServiceImpl implements ProductRegistrationService {
+public class
+ProductRegistrationServiceImpl implements ProductRegistrationService {
 
     private ProductValidator productValidator;
     private ProductDAO productDAO;

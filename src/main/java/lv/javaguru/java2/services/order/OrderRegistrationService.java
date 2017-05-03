@@ -14,7 +14,7 @@ public interface OrderRegistrationService {
     Order register(Integer productID,
                    String mail,
                    Integer quantity,
-                   Integer prodpackID,
+                   Integer prodpackID
                    );
 
 }

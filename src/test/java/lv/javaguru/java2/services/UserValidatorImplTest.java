@@ -18,14 +18,56 @@ public class UserValidatorImplTest {
     public void shouldThrowExceptionWhenFirstNameIsNull() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("First Name must be not empty!");
-        validator.validate(null, "password", "mail", "password");
+        validator.validate(null, "lastName", "mail", "password");
     }
 
     @Test
     public void shouldThrowExceptionWhenFirstNameIsEmpty() {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("First Name must be not empty!");
-        validator.validate("", "password", "mail", "password");
+        validator.validate("", "lastName", "mail", "password");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenLastNameIsNull() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("First Name must be not empty!");
+        validator.validate("firstName", null, "mail", "password");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenLastNameIsEmpty() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("First Name must be not empty!");
+        validator.validate("firstName", "", "mail", "password");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenMailIsNull() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("First Name must be not empty!");
+        validator.validate("firstName", "lastName", null, "password");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenMailIsEmpty() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("First Name must be not empty!");
+        validator.validate("firstName", "lastName", "", "password");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenPasswordIsNull() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("First Name must be not empty!");
+        validator.validate("firstName", "lastName", "mail", null);
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenPasswordIsEmpty() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("First Name must be not empty!");
+        validator.validate("firstName", "lastName", "mail", "");
     }
 
     // write more tests
