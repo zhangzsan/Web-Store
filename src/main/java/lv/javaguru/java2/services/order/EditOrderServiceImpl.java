@@ -7,7 +7,7 @@ import lv.javaguru.java2.domain.Order;
 import java.util.Optional;
 
 /**
- * Order editing implementation
+ * Order update implementation
  */
 public class EditOrderServiceImpl implements EditOrderService{
 
@@ -15,7 +15,7 @@ public class EditOrderServiceImpl implements EditOrderService{
     private OrderValidator orderValidator= new OrderValidatorImpl();
 
     @Override
-    public void edit(Long userId,
+    public void update(Long userId,
                      Integer NewProductID,
                      Integer NewQuantity,
                      Integer NewProdpackID ){

@@ -1,6 +1,6 @@
 package lv.javaguru.java2.domain;
 
-public class OrderBuilder {
+public class OrderBuilder extends Order {
 
 
     private Integer productID;
@@ -39,7 +39,7 @@ public class OrderBuilder {
         return this;
     }
 
-    public OrderBuilder withProdpackID(Integer productID){
+    public OrderBuilder withProdpackID(Integer prodpackID){
         this.prodpackID = prodpackID;
         return this;
     }

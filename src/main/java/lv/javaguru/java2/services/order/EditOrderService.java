@@ -1,11 +1,11 @@
 package lv.javaguru.java2.services.order;
 
 /**
- * Order editing
+ * Order update
  */
 public interface EditOrderService {
 
-    void edit(Integer productID,
+    void update(Integer productID,
               Integer quantity,
               Integer prodpackID
               );
