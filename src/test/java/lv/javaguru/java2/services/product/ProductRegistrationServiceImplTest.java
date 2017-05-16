@@ -21,7 +21,7 @@ public class ProductRegistrationServiceImplTest {
 
     @Before
     public void init() {
-        validator = mock(ProductValidator.class);
+        validator = mock(ProductValidator.class);//
         dao = mock(ProductDAO.class);
         service = new ProductRegistrationServiceImpl(validator, dao);
     }
