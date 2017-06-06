@@ -2,9 +2,6 @@ package lv.javaguru.java2.services.order;
 
 import lv.javaguru.java2.database.OrderDAO;
 import lv.javaguru.java2.database.jdbc.OrderDAOImpl;
-import lv.javaguru.java2.domain.Order;
-
-import java.util.Optional;
 
 /**
  * Order update implementation
@@ -14,7 +11,7 @@ public class EditOrderServiceImpl implements EditOrderService{
     private OrderDAO orderDAO = new OrderDAOImpl();
     private OrderValidator orderValidator= new OrderValidatorImpl();
 
-    @Override
+/*    @Override
     public void update(Long userId,
                      Integer NewProductID,
                      Integer NewQuantity,
@@ -30,6 +27,12 @@ public class EditOrderServiceImpl implements EditOrderService{
         order.setNewProductID(newProductID);
         order.setNewQuantity (newQuantity);
         orderDAO.update(order);
-    }
+    }*/
 
+    @Override
+    public void update(Integer productID,
+                       Integer quantity,
+                       Integer prodpackID) {
+
+    }
 }
